@@ -4,7 +4,8 @@
 
 This shoul be a simple project! Now let's make it complicated...because we like chalenges! 
 
-The scope of this project is to build a new web app for investors in european companies, with a nice web based frontend and useful search features. 
+The scope of this project is to build a new web app for investors in european companies, with a nice web based frontend and useful search features. More details here: https://github.com/scr53005/eftg-steem/wiki/Introduction-to-European-Financial-Transparency-Gateway-(ETFG)
+
 
 Fisrtly let's define the simple tasks: 
 1. Build the Private Steem Blockchain. Details: the goal is to build a private network with 5 nodes (withness, full nodes, seed nodes) on 5 diffrent virtual machines with public IPs. The contributor should provide the architecture, full documentation and all the config files. 
