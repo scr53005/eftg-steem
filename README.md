@@ -27,13 +27,16 @@ The contributor should provide:
 The exact number of each type of peer and the number of virtual machines needed will be discus after the first proposal of the architecure. The private steem network will have its own chainid, tokens supply and config files.
 This private steem network will be used in corporate projects, so the proposed architecture should take into consideration the needed High Availability, Security, and Scalability features. (also the need of a VPN network)  
 After the documentation is ready, we will follow all the stepts, using VMs in Azure, Amazon, and/or oher cloud provides and we will deploy the private steem network. Feedback will be provided to the contributor and possible additional details will be asked. 
-After the private steem network will be up and running and the documenation will be reviewed, the contributor will publish a post on steemit using the title "The user guide for newby on how to build a private steem blockchain for corporate projects". In this way it could be helpful for the whole community and for everyone who wants to use the steem technology for corporate/enterprise/private projects.  
+After the private steem network will be up and running and the documenation will be reviewed, the contributor will publish a post on steemit using the title "The user guide for newby on how to build a private steem blockchain for corporate projects". In this way it could be helpful for the whole community and for everyone who wants to use the steem technology for corporate/enterprise/private projects.
+
 Deadline: 1 week. 
 Get in touch with us on : https://discord.gg/bw8Uyj
 
 
 Task 2. Build the input web-based module. Details: comming soon...
+
 Task 3. Build the database for queries. Details: comming soon...
+
 Task 4. Build the reporting web-based module. Details: comming soon...
 
 
