@@ -30,6 +30,7 @@ After the documentation is ready, we will follow all the stepts, using VMs in Az
 After the private steem network will be up and running and the documenation will be reviewed, the contributor will publish a post on steemit using the title "The user guide for newby on how to build a private steem blockchain for corporate projects". In this way it could be helpful for the whole community and for everyone who wants to use the steem technology for corporate/enterprise/private projects.
 
 Deadline: 1 week. 
+
 Get in touch with us on : https://discord.gg/bw8Uyj
 
 
