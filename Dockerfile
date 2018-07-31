@@ -65,15 +65,31 @@ RUN \
     mkdir build_eftg && \
     cd build_eftg && \
     cmake \
+        -DCMAKE_INSTALL_PREFIX=/usr/local/eftgd-default \
         -DCMAKE_BUILD_TYPE=Release \
-        -DLOW_MEMORY_NODE=OFF \
+        -DLOW_MEMORY_NODE=ON \
         -DCLEAR_VOTES=ON \
-        -DSKIP_BY_TX_ID=ON \
+        -DSKIP_BY_TX_ID=OFF \
+        -DBUILD_STEEM_TESTNET=OFF \
         -DSTEEM_STATIC_BUILD=${STEEM_STATIC_BUILD} \
         .. && \
     make -j$(nproc) steemd cli_wallet && \
 	make install && \
-    rm -rf /usr/local/src/steem/build_eftg
+    rm -rf /usr/local/src/steem/build_eftg && \
+    mkdir build_eftg && \
+    cd build_eftg && \
+    cmake \
+        -DCMAKE_INSTALL_PREFIX=/usr/local/eftgd-full \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DLOW_MEMORY_NODE=OFF \
+        -DCLEAR_VOTES=OFF \
+        -DSKIP_BY_TX_ID=ON \
+        -DBUILD_STEEM_TESTNET=OFF \
+        -DSTEEM_STATIC_BUILD=${STEEM_STATIC_BUILD} \
+        .. && \
+    make -j$(nproc) steemd cli_wallet && \
+	make install && \
+    rm -rf /usr/local/src/steem 
 
 RUN \
     apt-get remove -y \
