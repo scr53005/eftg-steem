@@ -14,6 +14,7 @@ Using the public EFTG Docker image
  - cp ~/eftg-steem/config/seed/config.ini ~/eftg/
 
  # Edit the configuration and change all lines that contain the [replace] comment
+ # In order to be able to connect to our Infra, please provide us your public external IP address. You can contact us [here](https://discord.gg/F4C3zBK "EFTG's discord server")
  - vim ~/eftg/config.ini
 
  # Finally, let's run the container !
