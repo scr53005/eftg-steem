@@ -20,9 +20,7 @@ The contributor should provide:
 - specifying how to modify the number of minimum/maximum witnesses based on different network topologies. 
 - specifying how to modify the blocksize (if needed for some specific projects). 
 - all the config files. 
-- documenting all the steps needed to install, configure and start the steemit condenser on this specific steem private network.
-- documenting all the steps needed to install, configure and start the steemdb blockexplorer on this specific steem private network.
-- documenting all the steps needed to install, configure and start the steemconnect on this specific steem private network and how to create new accounts.
+
 
 The exact number of each type of peer and the number of virtual machines needed will be discus after the first proposal of the architecure. The private steem network will have its own chainid, tokens supply and config files.
 This private steem network will be used in corporate projects, so the proposed architecture should take into consideration the needed High Availability, Security, and Scalability features. (also the need of a VPN network)  
@@ -31,13 +29,34 @@ After the private steem network will be up and running and the documenation will
 
 Deadline: 1 week. 
 
-Get in touch with us on : https://discord.gg/bw8Uyj
+Get in touch with us on : https://discord.gg/pV5hgDA
+
+Task 2. 
+- documenting all the steps needed to install, configure and start the steemit condenser on this specific steem private network.
+
+Deadline: 1 week. 
+
+Get in touch with us on : https://discord.gg/pV5hgDA
+
+Task 3
+- documenting all the steps needed to install, configure and start the steemdb blockexplorer on this specific steem private network.
+
+Deadline: 1 week. 
+
+Get in touch with us on : https://discord.gg/pV5hgDA
+
+Task 4
+- documenting all the steps needed to install, configure and start the steemconnect on this specific steem private network and how to create new accounts.
+
+Deadline: 1 week. 
+
+Get in touch with us on : https://discord.gg/pV5hgDA
 
 
-Task 2. Build the input web-based module. Details: comming soon...
+Task x. Build the input web-based module. Details: comming soon...
 
-Task 3. Build the database for queries. Details: comming soon...
+Task x. Build the database for queries. Details: comming soon...
 
-Task 4. Build the reporting web-based module. Details: comming soon...
+Task x. Build the reporting web-based module. Details: comming soon...
 
 
