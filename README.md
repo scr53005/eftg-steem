@@ -9,7 +9,8 @@ The scope of this project is to build a new web-based app for investors in europ
 
 Firstly let's define the simple tasks:
 
-Task 1 (documentation). How to build Private Steem Blockchain for corporate projects. 
+Task 1 (documentation). How to build Private Steem Blockchain for corporate projects. [already assigned]
+
 Details: the goal is to provide an extensive documentation on how to build a private steem network [mainnet flag, not testnet flag] with multiple peers (withnesses, full nodes, seed nodes, client CLI) on different virtual machines with public IPs. 
 The contributor should provide:
 - the architecture, 
@@ -31,21 +32,33 @@ Deadline: 1 week.
 
 Get in touch with us on : https://discord.gg/pV5hgDA
 
-Task 2. 
-- documenting all the steps needed to install, configure and start the steemit condenser on this specific steem private network.
+___________________________________________________________________________________________________________
 
-Deadline: 1 week. 
+
+Task 2. How to use condenser with a private steem blockchain. 
+
+The goal of this task is to provide a clear documentation on how to setup a steem condenser (steemit or busy) to work with a private steem blockhain network. As an example, it will be tested with our existing private network.  <a href= "https://github.com/scr53005/eftg-steem/blob/master/config/HOWTO.md"> You find here all the details to connect with. </a>
+
+It is required to document all the steps needed to install, configure and start the steemit/busy condenser on this specific steem private network.
+
+Deadline: 1 week starting for the decision to select someone to work on. 
 
 Get in touch with us on : https://discord.gg/pV5hgDA
 
-Task 3
+
+____________________________________________________________________________________________________________
+
+
+
+
+Task 3. TBD
 - documenting all the steps needed to install, configure and start the steemdb blockexplorer on this specific steem private network.
 
 Deadline: 1 week. 
 
 Get in touch with us on : https://discord.gg/pV5hgDA
 
-Task 4
+Task 4. TBD
 - documenting all the steps needed to install, configure and start the steemconnect on this specific steem private network and how to create new accounts.
 
 Deadline: 1 week. 
