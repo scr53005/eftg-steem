@@ -65,6 +65,11 @@ Deadline: 1 week.
 
 Get in touch with us on : https://discord.gg/pV5hgDA
 
+Other tasks to be defined: 
+1. Modity the condenser to accept [only] pdf upload + adding a security function to, in the URL, to be embedded the HASH of the pdf content. 
+2. Modify the condenser to accept multiple filds input (company name, LEI, revenue, etc [brag-token....]. 
+3. Design for UI/UX [the frontend for investors] ?
+
 
 Task x. Build the input web-based module. Details: comming soon...
 
