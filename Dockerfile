@@ -60,8 +60,6 @@ ADD . /usr/local/src/steem
 
 RUN \
     cd /usr/local/src/steem && \
-	git checkout stable && \
-    git submodule update --init --recursive && \
     mkdir build_eftg && \
     cd build_eftg && \
     cmake \
@@ -74,8 +72,12 @@ RUN \
         -DSTEEM_STATIC_BUILD=${STEEM_STATIC_BUILD} \
         .. && \
     make -j$(nproc) steemd cli_wallet && \
-	make install && \
-    rm -rf /usr/local/src/steem/build_eftg && \
+    make install && \
+    cd /usr/local/src/steem && \
+    rm -rf build_eftg
+
+RUN \
+    cd /usr/local/src/steem && \
     mkdir build_eftg && \
     cd build_eftg && \
     cmake \
@@ -88,8 +90,9 @@ RUN \
         -DSTEEM_STATIC_BUILD=${STEEM_STATIC_BUILD} \
         .. && \
     make -j$(nproc) steemd cli_wallet && \
-	make install && \
-    rm -rf /usr/local/src/steem 
+    make install && \
+    cd /usr/local/src/steem && \
+    rm -rf build_eftg 
 
 RUN \
     apt-get remove -y \
