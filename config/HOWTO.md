@@ -20,3 +20,11 @@ Using the public EFTG Docker image
  # Finally, let's run the container !
  - docker run -p 2001:2001 -p 8090:8090 -v ~/eftg:/eftg -d --name seed -t eftg/main:latest /usr/local/bin/steemd -d /eftg
 
+Compiling from Source
+=====================
+
+  # The adapted Steem source is located in the steem directory inside the git repository
+  - cd ~/eftg-steem/steem
+
+  # Instructions on how to compile are not provided since the Docker image is the recommended way
+  # Anyhow, you can have a look at the Dockerfile and continue from there.  
