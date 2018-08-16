@@ -44,7 +44,7 @@ It is required to document all the steps needed to install, configure and start 
 Deadline: 1 week starting for the decision to select someone to work on. 
 
 Get in touch with us on : https://discord.gg/pV5hgDA
-
+Steemit Post: https://steemit.com/utopian-io/@smartiot/task-2-how-to-use-condenser-with-a-private-steem-blockchain
 
 ____________________________________________________________________________________________________________
 
