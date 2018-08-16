@@ -32,6 +32,7 @@ Deadline: 1 week.
 
 Get in touch with us on : https://discord.gg/pV5hgDA
 
+Steemit Post: https://steemit.com/utopian-io/@jga/the-user-guide-for-a-newbie-on-how-to-build-a-private-steem-blockchain-for-corporate-projects
 ___________________________________________________________________________________________________________
 
 
