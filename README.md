@@ -32,7 +32,13 @@ Deadline: 1 week.
 
 Get in touch with us on : https://discord.gg/pV5hgDA
 
-Steemit Post: https://steemit.com/utopian-io/@jga/the-user-guide-for-a-newbie-on-how-to-build-a-private-steem-blockchain-for-corporate-projects
+Task request: https://steemit.com/utopian-io/@utopian.tasks/how-to-build-a-private-steem-blockchain-european-financial-transparency-gateway-steem-bounty
+
+
+Task solution: https://steemit.com/utopian-io/@jga/the-user-guide-for-a-newbie-on-how-to-build-a-private-steem-blockchain-for-corporate-projects
+and 
+https://steemit.com/utopian-io/@jga/the-user-guide-for-a-newbie-on-how-to-build-a-private-steem-blockchain-for-corporate-projects-part-2
+
 ___________________________________________________________________________________________________________
 
 
