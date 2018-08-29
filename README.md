@@ -57,9 +57,8 @@ Steemit Post: https://steemit.com/utopian-io/@smartiot/task-2-how-to-use-condens
 ____________________________________________________________________________________________________________
 
 
-Title
+Task3. How to use a BlockExplorer (steemdb) with a private Steem Blockchain from European Financial Transparency Gateway (EFTG) Project
 
-How to use a BlockExplorer (steemdb) with a private Steem Blockchain from European Financial Transparency Gateway (EFTG)
 
 #### Repository
 Utopian is running this task request on behalf of the Blockchain Competence Centre of the European Commission for the European Financial Transparency Gateway initiative.
