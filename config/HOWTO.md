@@ -2,7 +2,7 @@ Using the public EFTG Docker image
 ==================================
 
  # Pull latest docker image from EFTG's public repository
- - docker pull eftg/main:latest
+ - docker pull blkcc/eftg:latest
 
  # Clone EFTG git repository that contains the necessary config files
  - git clone https://github.com/scr53005/eftg-steem.git
@@ -18,7 +18,8 @@ Using the public EFTG Docker image
  - vim ~/eftg/config.ini
 
  # Finally, let's run the container !
- - docker run -p 2001:2001 -p 8090:8090 -v ~/eftg:/eftg -d --name seed -t eftg/main:latest /usr/local/bin/steemd -d /eftg
+ - docker run -p 2001:2001 -p 8090:8090 -v ~/eftg:/eftg -d --name seed -t blkcc/eftg:latest
+   /usr/local/eftgd-default/bin/steemd -d /eftg
 
 Compiling from Source
 =====================
