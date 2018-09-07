@@ -166,9 +166,9 @@ class UserWallet extends React.Component {
         if (savings_withdraws) {
             savings_withdraws.forEach(withdraw => {
                 const [amount, asset] = withdraw.get('amount').split(' ');
-                if (asset === 'STEEM') savings_pending += parseFloat(amount);
+                if (asset === 'EFTG') savings_pending += parseFloat(amount);
                 else {
-                    if (asset === 'SBD')
+                    if (asset === 'EUR')
                         savings_sbd_pending += parseFloat(amount);
                 }
             });
@@ -225,7 +225,7 @@ class UserWallet extends React.Component {
             !open_orders || !isMyAccount
                 ? 0
                 : open_orders.reduce((o, order) => {
-                      if (order.sell_price.base.indexOf('SBD') !== -1) {
+                      if (order.sell_price.base.indexOf('EUR') !== -1) {
                           o += order.for_sale;
                       }
                       return o;
@@ -235,7 +235,7 @@ class UserWallet extends React.Component {
             !open_orders || !isMyAccount
                 ? 0
                 : open_orders.reduce((o, order) => {
-                      if (order.sell_price.base.indexOf('STEEM') !== -1) {
+                      if (order.sell_price.base.indexOf('EFTG') !== -1) {
                           o += order.for_sale;
                       }
                       return o;
@@ -303,20 +303,12 @@ class UserWallet extends React.Component {
             {
                 value: tt('userwallet_jsx.transfer'),
                 link: '#',
-                onClick: showTransfer.bind(
-                    this,
-                    'STEEM',
-                    'Transfer to Account'
-                ),
+                onClick: showTransfer.bind(this, 'EFTG', 'Transfer to Account'),
             },
             {
                 value: tt('userwallet_jsx.transfer_to_savings'),
                 link: '#',
-                onClick: showTransfer.bind(
-                    this,
-                    'STEEM',
-                    'Transfer to Savings'
-                ),
+                onClick: showTransfer.bind(this, 'EFTG', 'Transfer to Savings'),
             },
             {
                 value: tt('userwallet_jsx.power_up'),
@@ -339,12 +331,12 @@ class UserWallet extends React.Component {
             {
                 value: tt('g.transfer'),
                 link: '#',
-                onClick: showTransfer.bind(this, 'SBD', 'Transfer to Account'),
+                onClick: showTransfer.bind(this, 'EUR', 'Transfer to Account'),
             },
             {
                 value: tt('userwallet_jsx.transfer_to_savings'),
                 link: '#',
-                onClick: showTransfer.bind(this, 'SBD', 'Transfer to Savings'),
+                onClick: showTransfer.bind(this, 'EUR', 'Transfer to Savings'),
             },
             { value: tt('userwallet_jsx.market'), link: '/market' },
         ];
@@ -413,7 +405,7 @@ class UserWallet extends React.Component {
             '$' + sbdOrders.toFixed(3)
         );
         const savings_balance_str = numberWithCommas(
-            saving_balance_steem.toFixed(3) + ' STEEM'
+            saving_balance_steem.toFixed(3) + ' EFTG'
         );
         const savings_sbd_balance_str = numberWithCommas(
             '$' + sbd_balance_savings.toFixed(3)
@@ -425,7 +417,7 @@ class UserWallet extends React.Component {
                     LIQUID_TOKEN,
                 }),
                 link: '#',
-                onClick: showTransfer.bind(this, 'STEEM', 'Savings Withdraw'),
+                onClick: showTransfer.bind(this, 'EFTG', 'Savings Withdraw'),
             },
         ];
         const savings_sbd_menu = [
@@ -434,15 +426,13 @@ class UserWallet extends React.Component {
                     DEBT_TOKENS,
                 }),
                 link: '#',
-                onClick: showTransfer.bind(this, 'SBD', 'Savings Withdraw'),
+                onClick: showTransfer.bind(this, 'EUR', 'Savings Withdraw'),
             },
         ];
         // set dynamic secondary wallet values
         const sbdInterest = this.props.sbd_interest / 100;
         const sbdMessage = (
-            <span>
-                {tt('userwallet_jsx.tradeable_tokens_transferred')}
-            </span>
+            <span>{tt('userwallet_jsx.tradeable_tokens_transferred')}</span>
         );
 
         const reward_steem =
@@ -455,7 +445,7 @@ class UserWallet extends React.Component {
                 : null;
         const reward_sp =
             parseFloat(account.get('reward_vesting_steem').split(' ')[0]) > 0
-                ? account.get('reward_vesting_steem').replace('STEEM', 'SP')
+                ? account.get('reward_vesting_steem').replace('EFTG', 'SP')
                 : null;
 
         let rewards = [];
@@ -532,7 +522,7 @@ class UserWallet extends React.Component {
                 </div>
                 <div className="UserWallet__balance row">
                     <div className="column small-12 medium-8">
-                        STEEM
+                        EFTG
                         <FormattedHTMLMessage
                             className="secondary"
                             id="tips_js.liquid_token"
@@ -545,10 +535,10 @@ class UserWallet extends React.Component {
                                 className="Wallet_dropdown"
                                 items={steem_menu}
                                 el="li"
-                                selected={steem_balance_str + ' STEEM'}
+                                selected={steem_balance_str + ' EFTG'}
                             />
                         ) : (
-                            steem_balance_str + ' STEEM'
+                            steem_balance_str + ' EFTG'
                         )}
                         {steemOrders ? (
                             <div
@@ -560,7 +550,7 @@ class UserWallet extends React.Component {
                             >
                                 <Link to="/market">
                                     <Tooltip t={tt('market_jsx.open_orders')}>
-                                        (+{steem_orders_balance_str} STEEM)
+                                        (+{steem_orders_balance_str} EFTG)
                                     </Tooltip>
                                 </Link>
                             </div>
@@ -569,7 +559,7 @@ class UserWallet extends React.Component {
                 </div>
                 <div className="UserWallet__balance row zebra">
                     <div className="column small-12 medium-8">
-                        STEEM POWER
+                        EFTG POWER
                         <FormattedHTMLMessage
                             className="secondary"
                             id="tips_js.influence_token"
@@ -589,10 +579,10 @@ class UserWallet extends React.Component {
                                 className="Wallet_dropdown"
                                 items={power_menu}
                                 el="li"
-                                selected={power_balance_str + ' STEEM'}
+                                selected={power_balance_str + ' EFTG'}
                             />
                         ) : (
-                            power_balance_str + ' STEEM'
+                            power_balance_str + ' EFTG'
                         )}
                         {delegated_steem != 0 ? (
                             <div
@@ -602,8 +592,8 @@ class UserWallet extends React.Component {
                                         : null,
                                 }}
                             >
-                                <Tooltip t="STEEM POWER delegated to/from this account">
-                                    ({received_power_balance_str} STEEM)
+                                <Tooltip t="EFTG POWER delegated to/from this account">
+                                    ({received_power_balance_str} EFTG)
                                 </Tooltip>
                             </div>
                         ) : null}
@@ -611,7 +601,7 @@ class UserWallet extends React.Component {
                 </div>
                 <div className="UserWallet__balance row">
                     <div className="column small-12 medium-8">
-                        STEEM DOLLARS
+                        EFTG DOLLARS
                         <div className="secondary">{sbdMessage}</div>
                     </div>
                     <div className="column small-12 medium-4">
@@ -763,7 +753,7 @@ export default connect(
         );
         if (feed_price && feed_price.has('base') && feed_price.has('quote')) {
             const { base, quote } = feed_price.toJS();
-            if (/ SBD$/.test(base) && / STEEM$/.test(quote))
+            if (/ EUR$/.test(base) && / EFTG$/.test(quote))
                 price_per_steem = parseFloat(base.split(' ')[0]);
         }
         const savings_withdraws = state.user.get('savings_withdraws');
