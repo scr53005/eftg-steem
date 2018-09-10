@@ -635,7 +635,7 @@ export default connect(
         const feed_price = state.global.get('feed_price');
         if (feed_price && feed_price.has('base') && feed_price.has('quote')) {
             const { base, quote } = feed_price.toJS();
-            if (/ EUR$/.test(base) && / STEEM$/.test(quote))
+            if (/ EUR$/.test(base) && / EFTG$/.test(quote))
                 price_per_steem = parseFloat(base.split(' ')[0]);
         }
 
