@@ -106,8 +106,8 @@
 #define STEEMIT_MIN_VOTE_INTERVAL_SEC           3
 #define STEEMIT_VOTE_DUST_THRESHOLD             (50000000)
 
-#define STEEMIT_MIN_ROOT_COMMENT_INTERVAL       (fc::seconds(60*5)) // 5 minutes
-#define STEEMIT_MIN_REPLY_INTERVAL              (fc::seconds(20)) // 20 seconds
+#define STEEMIT_MIN_ROOT_COMMENT_INTERVAL       (fc::seconds(1)) // was 5 minutes
+#define STEEMIT_MIN_REPLY_INTERVAL              (fc::seconds(1)) // was 20 seconds
 #define STEEMIT_POST_AVERAGE_WINDOW             (60*60*24u) // 1 day
 #define STEEMIT_POST_MAX_BANDWIDTH              (4*STEEMIT_100_PERCENT) // 2 posts per 1 days, average 1 every 12 hours
 #define STEEMIT_POST_WEIGHT_CONSTANT            (uint64_t(STEEMIT_POST_MAX_BANDWIDTH) * STEEMIT_POST_MAX_BANDWIDTH)
