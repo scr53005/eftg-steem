@@ -1,6 +1,7 @@
 import { api } from '@steemit/steem-js';
 
 const request_base = {
+    jsonrpc: '2.0',
     method: 'post',
     mode: 'no-cors',
     credentials: 'same-origin',
