@@ -1,12 +1,12 @@
 {
-  "database_url": "mysql://root:password@127.0.0.1/steemit_dev",
+  "database_url": "mysql://root:password@172.17.0.1/steemit_dev",
   "disable_signups": false,
   "facebook_app_id": false,
   "google_analytics_id": false,
   "helmet": {
     "directives": {
       "childSrc": "'self' www.youtube.com staticxx.facebook.com w.soundcloud.com player.vimeo.com",
-      "connectSrc": "'self' wss://kapteyn.westeurope.cloudapp.azure.com:8089",
+      "connectSrc": "'self' https://api.blkcc.xyz/",
       "defaultSrc": "'self' www.youtube.com staticxx.facebook.com player.vimeo.com",
       "fontSrc": "data: fonts.gstatic.com",
       "frameAncestors": "'none'",
@@ -20,7 +20,7 @@
     "reportOnly": false,
     "setAllHeaders": true
   },
-  "img_proxy_prefix": "https://steemitdevimages.com/",
+  "img_proxy_prefix": "http://cdn.blkcc.xyz/",
   "ipfs_prefix": false,
   "mixpanel": false,
   "newrelic": false,
@@ -69,8 +69,8 @@
     "auth_token": false
   },
   "upload_image": false,
-  "steemd_connection_client": "wss://kapteyn.westeurope.cloudapp.azure.com:8089",
-  "steemd_connection_server": "wss://kapteyn.westeurope.cloudapp.azure.com:8089",
+  "steemd_connection_client": "https://api.blkcc.xyz/",
+  "steemd_connection_server": "https://api.blkcc.xyz/",
   "steemd_use_appbase": false,
   "chain_id": "1c15984beb16945c01cb9bc3d654b0417c650461dfe535018fe03a4fc5a36864",
   "address_prefix": "EUR",
