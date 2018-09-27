@@ -1,0 +1,66 @@
+// app global css
+// app global css
+@import '~variables'
+$background = #F4F1E2
+.bg-background
+  background $background
+
+
+/* headline for impact = h1, h2 */
+@font-face {
+  font-family: 'notosans_black';
+  src: url('/statics/fonts/notosans-black-webfont.woff2') format('woff2'),
+    url('/statics/fonts/notosans-black-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* subheadline = h3,h4 => NO H5 ever!!! */
+@font-face {
+  font-family: 'notosans_thin';
+  src: url('/statics/fonts/notosans-thin-webfont.woff2') format('woff2'),
+    url('/statics/fonts/notosans-thin-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* body text */
+@font-face {
+  font-family: 'notosans_regular';
+  src: url('/statics/fonts/notosans-regular-webfont.woff2') format('woff2'),
+    url('/statics/fonts/notosans-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*
+  font-family notosans_regular
+  text-overflow-ellipsis alignment-baseline
+
+h1, h2, h3, h4, h5, h6
+  font-family notosans_thin
+  color $tertiary
+
+strong
+  font-family notosans_thin
+  color $tertiary
+
+.q-toolbar div
+  font-family notosans_thin
+
+p
+  font-family notosans_regular
+  color $neutral
+
+.q-headline
+  color $tertiary
+
+.q-title
+  color $info
+
+.header-gradient
+  background linear-gradient('90deg', #000, $tertiary)!important
+
+.q-btn-inner label
+  padding-left 2px
