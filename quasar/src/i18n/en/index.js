@@ -1,9 +1,11 @@
 export default {
   interface: {
     save: 'Save',
+    favourite: 'Favourite',
     report: 'Report',
     online: 'Online',
     offline: 'Offline',
+    allRecords: 'Full Report',
     issuer: {
       meta: {
         label: 'Issuer Name'
@@ -51,6 +53,9 @@ export default {
   pages: {
     dashboard: {
       title: 'Dashboard'
+    },
+    information: {
+      title: 'Information'
     }
   }
 }
