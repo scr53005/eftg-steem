@@ -20,7 +20,7 @@
     "reportOnly": false,
     "setAllHeaders": true
   },
-  "img_proxy_prefix": "http://cdn.blkcc.xyz/",
+  "img_proxy_prefix": "http://cdn.dev.blkcc.xyz/",
   "ipfs_prefix": false,
   "mixpanel": false,
   "newrelic": false,
