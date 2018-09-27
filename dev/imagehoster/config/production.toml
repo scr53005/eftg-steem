@@ -17,7 +17,7 @@ rpc_node = 'https://api.blkcc.xyz'
 
 # url where service is running
 #service_url = 'https://cdn.blkcc.xyz'
-site_url = 'https://cdn.blkcc.xyz'
+site_url = 'https://cdn.dev.blkcc.xyz'
 service_url = 'http://localhost:8800'
 
 # default user avatar, should be a png minimum 512x512
