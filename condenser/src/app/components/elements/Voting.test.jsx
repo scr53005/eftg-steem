@@ -19,8 +19,8 @@ configure({ adapter: new Adapter() });
 const mockGlobal = Map({
     props: Map({ sbd_print_rate: 99 }),
     feed_price: Map({
-        base: '5 SBD',
-        quote: '10 STEEM',
+        base: '5 EUR',
+        quote: '10 EFTG',
     }),
     content: Map({
         test: Map({
@@ -30,9 +30,9 @@ const mockGlobal = Map({
             stats: {
                 total_votes: 1,
             },
-            max_accepted_payout: '999999 SBD',
+            max_accepted_payout: '999999 EUR',
             percent_steem_dollars: 0,
-            pending_payout_value: '10 SBD',
+            pending_payout_value: '10 EUR',
             cashout_time: '2018-03-30T10:00:00Z',
             pending_payout_sbd: 99,
         }),
@@ -45,9 +45,9 @@ const voteTestObj = fromJS({
     stats: {
         total_votes: 1,
     },
-    max_accepted_payout: '999999 SBD',
+    max_accepted_payout: '999999 EUR',
     percent_steem_dollars: 0,
-    pending_payout_value: '10 SBD',
+    pending_payout_value: '10 EUR',
     cashout_time: '2018-03-30T10:00:00Z',
 });
 
@@ -272,9 +272,9 @@ describe('Voting', () => {
             stats: {
                 total_votes: 1,
             },
-            max_accepted_payout: '999999 SBD',
+            max_accepted_payout: '999999 EUR',
             percent_steem_dollars: 0,
-            pending_payout_value: '10 SBD',
+            pending_payout_value: '10 EUR',
             cashout_time: '2018-03-30T10:00:00Z',
         });
         const store = createStore(rootReducer);
@@ -292,7 +292,7 @@ describe('Voting', () => {
             </Provider>
         );
         expect(JSON.stringify(component.toJSON())).toContain(
-            '(0.00 SBD, 10.00 SP)'
+            '(0.00 EUR, 10.00 SP)'
         );
     });
 
@@ -302,9 +302,9 @@ describe('Voting', () => {
             stats: {
                 total_votes: 1,
             },
-            max_accepted_payout: '999999 SBD',
+            max_accepted_payout: '999999 EUR',
             percent_steem_dollars: 10000,
-            pending_payout_value: '10 SBD',
+            pending_payout_value: '10 EUR',
             cashout_time: '2018-03-30T10:00:00Z',
         });
         const component = renderer.create(
@@ -321,7 +321,7 @@ describe('Voting', () => {
             </Provider>
         );
         expect(JSON.stringify(component.toJSON())).toContain(
-            '(5.00 SBD, 5.00 SP)'
+            '(5.00 EUR, 5.00 SP)'
         );
     });
 
@@ -330,9 +330,9 @@ describe('Voting', () => {
             stats: {
                 total_votes: 1,
             },
-            max_accepted_payout: '999999 SBD',
+            max_accepted_payout: '999999 EUR',
             percent_steem_dollars: 10000,
-            pending_payout_value: '10 SBD',
+            pending_payout_value: '10 EUR',
             cashout_time: '2018-03-30T10:00:00Z',
         });
         const store = createStore(rootReducer);
@@ -350,7 +350,7 @@ describe('Voting', () => {
             </Provider>
         );
         expect(JSON.stringify(component.toJSON())).toContain(
-            '(2.50 SBD, 2.50 STEEM, 5.00 SP)'
+            '(2.50 EUR, 2.50 EFTG, 5.00 SP)'
         );
     });
 });

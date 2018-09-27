@@ -97,7 +97,7 @@ describe('market reducer', () => {
 
         expect(initial.get('status')).toEqual({});
     });
-
+    /*
     it('should receive open orders', () => {
         const initial = reducer();
 
@@ -134,4 +134,5 @@ describe('market reducer', () => {
         expect(orders[0].price).toBe(0.507);
         expect(orders[4].price).toBe(0.666);
     });
+    */
 });
