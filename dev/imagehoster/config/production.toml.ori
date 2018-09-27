@@ -1,0 +1,9 @@
+num_workers = 0
+port = 3234
+proxy = true
+log_level = 'info'
+rpc_node = 'https://api.steemit.com'
+[upload_store]
+type = 's3'
+[proxy_store]
+type = 's3'

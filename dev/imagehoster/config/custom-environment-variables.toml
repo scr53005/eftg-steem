@@ -1,0 +1,14 @@
+port = 'PORT'
+proxy = 'IS_PROXIED'
+num_workers = 'NUM_WORKERS'
+log_level = 'LOG_LEVEL'
+log_output = 'LOG_OUTPUT'
+service_url = 'SERVICE_URL'
+default_avatar = 'DEFAULT_AVATAR'
+redis_url = 'REDIS_URL'
+[upload_store]
+type = 'UPLOAD_STORAGE_TYPE'
+s3_bucket = 'UPLOAD_S3_BUCKET'
+[proxy_store]
+type = 'PROXY_STORAGE_TYPE'
+s3_bucket = 'PROXY_S3_BUCKET'

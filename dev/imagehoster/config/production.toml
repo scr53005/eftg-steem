@@ -1,0 +1,54 @@
+# default configuration, override in config/local-development.toml
+
+# port to listen on
+port = 8800
+
+# whether the app runs behind a trusted proxy
+proxy = false
+
+# application name used for logging and service namespace
+name = 'imagehoster'
+
+# number of worker processes to spawn, 0 = autodetect
+num_workers = 0
+
+# url to steemd node used for verifying signatures
+rpc_node = 'https://api.blkcc.xyz'
+
+# url where service is running
+#service_url = 'https://cdn.blkcc.xyz'
+site_url = 'https://cdn.blkcc.xyz'
+service_url = 'http://localhost:8800'
+
+# default user avatar, should be a png minimum 512x512
+default_avatar = 'https://steemitimages.com/DQmb2HNSGKN3pakguJ4ChCRjgkVuDN9WniFRPmrxoJ4sjR4'
+
+# log level to output at
+log_level = 'trace'
+
+# where to write logs, can be file path or stdout/err
+log_output = 'stdout'
+
+# max image size to allow uploading and proxying, in bytes
+max_image_size = 10000000 # 10mb
+
+# redis db used for ratelimiting uploads
+# redis_url = 'redis://localhost'
+
+# upload rate and reputation limits, rate limits only enforced if redis db is configured
+#[upload_limits]
+#duration = 604800000 # in ms (=1 week)
+#max = 300 # max requests within duration
+#reputation = 0 # minimum reputation needed for upload
+
+# blob stores, valid types are: memory, s3
+# the s3 type additionally needs the s3_bucket key to be set and expects
+# the proper AWS credentials to be configured (see aws-sdk for more info)
+
+# where to keep uploaded images
+[upload_store]
+type = 'memory'
+
+# where to keep proxied images
+[proxy_store]
+type = 'memory'

@@ -1,0 +1,55 @@
+{
+  "name": "imagehoster",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "make ci-test"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "@koa/cors": "^2.2.1",
+    "abstract-blob-store": "^3.3.4",
+    "aws-sdk": "^2.188.0",
+    "bunyan": "^2.0.2",
+    "busboy": "^0.2.14",
+    "config": "^1.29.4",
+    "dsteem": "^0.8.7",
+    "koa": "^2.3.0",
+    "koa-router": "^7.4.0",
+    "mmmagic": "^0.5.0",
+    "multihashes": "^0.4.13",
+    "needle": "^2.1.1",
+    "ratelimiter": "^3.0.3",
+    "redis": "^2.8.0",
+    "s3-blob-store": "^3.2.0",
+    "sharp": "^0.20.1",
+    "stream-head": "^1.1.0",
+    "toml": "^2.3.3"
+  },
+  "devDependencies": {
+    "@types/bunyan": "^1.8.2",
+    "@types/busboy": "^0.2.3",
+    "@types/bytebuffer": "^5.0.36",
+    "@types/config": "0.0.34",
+    "@types/koa": "^2.0.39",
+    "@types/koa-router": "^7.0.23",
+    "@types/koa__cors": "^2.2.2",
+    "@types/mmmagic": "^0.4.29",
+    "@types/mocha": "^5.1.0",
+    "@types/needle": "^2.0.2",
+    "@types/node": "^9.4.0",
+    "@types/ratelimiter": "^2.1.28",
+    "@types/redis": "^2.8.5",
+    "@types/sharp": "^0.17.6",
+    "mocha": "^5.1.1",
+    "mocha-junit-reporter": "^1.17.0",
+    "nsp": "^3.1.0",
+    "nyc": "^11.7.1",
+    "onchange": "^3.2.1",
+    "ts-node": "^6.0.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.1"
+  }
+}
