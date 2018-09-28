@@ -113,8 +113,8 @@ module.exports = function (ctx) {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {},
       manifest: {
-        name: 'Quasar PWA',
-        short_name: 'Quasar PWA',
+        name: 'EFTG',
+        short_name: 'EFTG',
         description: 'Best PWA App in town!',
         display: 'standalone',
         orientation: 'portrait',

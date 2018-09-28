@@ -25,7 +25,7 @@ export default {
       },
       input: {
         name: {
-          label: 'Filter records for a Country',
+          label: 'Filter Countries',
           hint: 'Type for autocompleted results',
           error: 'Something went wrong.',
           empty: 'No Results'

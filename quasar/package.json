@@ -1,8 +1,8 @@
 {
-  "name": "quasar-testing-starter",
+  "name": "EFTG",
   "version": "0.1.0",
   "description": "",
-  "productName": "Quasar Testing Starter",
+  "productName": "EFTG",
   "cordovaId": "org.cordova.quasar.app",
   "author": "Kevin Marrec",
   "private": true,

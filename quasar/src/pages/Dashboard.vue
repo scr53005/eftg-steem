@@ -2,7 +2,7 @@
   q-page
     .column
       .row
-        q-card.col-md-5.outline()
+        q-card.col-md-6.outline()
           q-card-title.bg-primary.flex()
             strong {{ $t('interface.issuer.meta.label') }}
             span(v-if="selectedName")
@@ -25,6 +25,7 @@
             style="margin-right:2px"
             closable
             square
+            dense
             @hide="removeCompanyChip(company)"
             ) {{ company }}
           q-card-separator
@@ -38,7 +39,7 @@
             q-btn( dense, size="xs", text-color="black", color="light" icon="info", @click="headsUp(`Show me what the heck this is about`)")
               label {{ $t('pages.information.title') }}
 
-        q-card.col-md-4.outline()
+        q-card.col-md-3.outline()
           q-card-title.bg-primary()
             strong {{ $t('interface.country.meta.label') }}
           q-card-main
@@ -60,6 +61,7 @@
             style="margin-right:2px"
             closable
             square
+            dense
             @hide="removeCountryChip(country)"
             ) {{ country }}
         q-card.col-md-3.outline()

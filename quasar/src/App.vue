@@ -8,7 +8,7 @@ export default {
   name: 'App',
   meta () {
     return {
-      titleTemplate: title => `Quasar Testing Starter - ${title}`,
+      titleTemplate: title => `EFTG - ${title}`,
       meta: {
         description: { name: 'description', content: 'Main description' },
         viewport: {
