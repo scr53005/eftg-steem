@@ -8,7 +8,7 @@ Using the public EFTG Docker image
  - git clone https://github.com/scr53005/eftg-steem.git
 
  # Create a local directory that will store the EFTG Blockchain configuration, block file and shared_memory file
- - mkdir ~/efttg
+ - mkdir ~/eftg
 
  # Copy the configuration for the type of node you'll like to use into the directory we just created
  - cp ~/eftg-steem/config/seed/config.ini ~/eftg/
