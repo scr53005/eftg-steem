@@ -2,6 +2,7 @@ Using the public EFTG Docker image
 ==================================
 
  # Pull latest docker image from EFTG's public repository
+ # If the machine does not have access to the internet we can provide access to a private repository
  docker pull blkcc/eftg:latest
 
  # Clone EFTG git repository that contains the necessary config files
@@ -21,10 +22,11 @@ Using the public EFTG Docker image
  # In order to be able to connect to our Infra, please provide us your public external IP address. You can contact us [here] 
  # (https://discord.gg/F4C3zBK "EFTG's discord server")
  vim ~/eftg/config.ini
+ 
+ # Alternatively, we can provide a config.ini with the seed nodes, the witness username and private key
 
  # Finally, let's run the container !
- - docker run -p 2001:2001 -p 8090:8090 -v ~/eftg:/eftg -d --name seed -t blkcc/eftg:latest
-   /usr/local/eftgd-default/bin/steemd -d /eftg
+ docker run -p 2001:2001 -p 8090:8090 -v ~/eftg:/eftg -d --name witness -t blkcc/eftg:latest /usr/local/eftgd-default/bin/steemd -d /eftg
 
 Compiling from Source
 =====================
