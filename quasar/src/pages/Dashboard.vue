@@ -2,7 +2,7 @@
   q-page
     .column
       .row
-        q-card.col-md-6.outline()
+        q-card.col-md-5.outline()
           q-card-title.bg-primary.flex()
             strong {{ $t('interface.issuer.meta.label') }}
             span(v-if="selectedName")
@@ -28,18 +28,7 @@
             dense
             @hide="removeCompanyChip(company)"
             ) {{ company }}
-          q-card-separator
-          q-card-actions(align="end")
-            q-btn( dense, size="xs", text-color="black", color="cyan-2" icon="fas fa-box", @click="headsUp(`Downloading all assets with edges connected to this user`)")
-              label {{ $t('interface.allRecords') }}
-            q-btn.color(dense, size="xs", text-color="black", color="positive", icon="star", @click="headsUp(`Saving this Issuer to your favorites`)")
-              label {{ $t('interface.favourite') }}
-            q-btn( dense, size="xs", text-color="black", color="warning", icon="warning", @click="headsUp(`Alert the admins about this Issuer`)")
-              label {{ $t('interface.report') }}
-            q-btn( dense, size="xs", text-color="black", color="light" icon="info", @click="headsUp(`Show me what the heck this is about`)")
-              label {{ $t('pages.information.title') }}
-
-        q-card.col-md-3.outline()
+        q-card.col-md-4.outline()
           q-card-title.bg-primary()
             strong {{ $t('interface.country.meta.label') }}
           q-card-main
@@ -92,6 +81,94 @@
               :placeholder="$t('interface.disclosureDate.dateTo.hint')"
               v-model="dateTo"
               )
+      .row(v-if="identifier")
+        .col-md-5
+          q-card.outline
+            q-card-title.bg-primary.flex()
+              strong {{ $t('interface.legalEntity.meta.label') }}
+              span(v-if="selectedName")
+                q-chip.float-right(square) {{ company }}
+            q-card-main
+              q-chip.q-ma-md(
+              color="secondary"
+              square
+              ) {{ identifier }}
+          q-card.outline()
+            q-card-title.bg-primary.flex()
+              strong {{ $t('interface.searchTitle.meta.label') }}
+
+            q-card-main
+              q-search.full-width(
+              loading
+              clearable
+              v-model="selectedName"
+              :float-label="$t('interface.searchTitle.input.name.label')"
+              :placeholder="$t('interface.searchTitle.input.name.hint')"
+              )
+        .col-md-5
+          q-card.outline()
+            q-card-title.bg-primary.flex()
+              strong {{ $t('interface.selectDocs.meta.label') }}
+            q-card-main
+              .row
+                q-input.full-width(
+                color="secondary"
+                stack-label="Filter"
+                v-model="tickFilter"
+                class="q-ma-none"
+                clearable
+                )
+              q-scroll-area(style="width: 100%; height: 146px")
+                q-tree(
+                style="font-size: 0.8em"
+                :nodes="tickable"
+                color="secondary"
+                default-expand-all
+                :ticked.sync="ticked"
+                tick-strategy="leaf-filtered"
+                :filter="tickFilter"
+                node-key="label"
+                )
+        .col-md-2
+          q-card.outline()
+            q-card-title.bg-primary.flex()
+              strong {{ $t('interface.financialYear.meta.label') }}
+            q-card-main
+              q-scroll-area(style="width: 100%; height: 202px")
+                q-tree(
+                style="font-size: 0.8em"
+                :nodes="years"
+                color="secondary"
+                default-expand-all
+                :ticked.sync="tickedYear"
+                tick-strategy="leaf"
+                node-key="label"
+                )
+      .row(v-if="identifier")
+        q-card.col-md-12.outline()
+          q-table.full-width(
+          :data="documents"
+          :columns="columns"
+          row-key="name"
+          selection="single"
+          :selected.sync="selected"
+          rows-per-page="[10, 25, 50, 100]"
+          )
+            template(slot="top-selection" slot-scope="props")
+              .row.bg-grey-10.full-width
+                .col-3
+                  q-btn.q-pa-sm(flat, dense, size="xs", text-color="cyan-2" icon="fas fa-cloud-download-alt", @click="headsUp(`Downloading all assets with edges connected to this user`)")
+                    label {{ $t('interface.allRecords') }}
+                .col-6
+                .col-3
+                  q-btn.q-pa-sm(flat, dense, size="xs", text-color="positive", icon="star", @click="headsUp(`Saving this Issuer to your favorites`)")
+                    label {{ $t('interface.favourite') }}
+                  q-btn.q-pa-sm(flat, dense, size="xs", text-color="warning", icon="warning", @click="headsUp(`Alert the admins about this Issuer`)")
+                    label {{ $t('interface.report') }}
+                  q-btn.q-pa-sm(flat, dense, size="xs", text-color="light" icon="info", @click="headsUp(`Show me what the heck this is about`)")
+                    label {{ $t('pages.information.title') }}
+                  // div.col
+                  // q-btn(color="negative" flat round delete icon="delete")
 </template>
 
 <style>
@@ -164,7 +241,62 @@ export default {
       countriesChoice: [],
       companies,
       companiesChoice: [],
-      country_search: undefined
+      country_search: undefined,
+      selection: [],
+      selected: undefined,
+      deleteRow: undefined,
+      columns: [
+        {
+          name: 'name',
+          label: this.$t('table.issuerName'),
+          field: 'issuerName',
+          // OR field: row => row.some.nested.prop
+          required: true,
+          align: 'center',
+          sortable: true,
+          // sort: (a, b) => parseInt(a, 10) - parseInt(b, 10),
+          // format: val => `${val}`,
+          classes: 'my-special-class'
+        },
+        { name: 'hms', align: 'center', label: 'HMS', field: 'hms', sortable: true },
+        { name: 'class', align: 'center', label: this.$t('table.documentClass'), field: 'class', sortable: true },
+        { name: 'language', align: 'center', label: this.$t('table.language'), field: 'language', sortable: true },
+        { name: 'year', align: 'center', label: this.$t('table.year'), field: 'year', sortable: true },
+        { name: 'disclosureDate', align: 'center', label: this.$t('table.disclosureDate'), field: 'disclosureDate', sortable: true }
+      ],
+      ticked: ['1.1 annual financial report', '2.1 home member state'],
+      tickedYear: ['2017', '2016', '2015', '2014', '2013'],
+      tickFilter: null,
+      tickable: [
+        {
+          label: 'select all document classes and sub-classes',
+          children: [
+            {
+              label: '1. Periodic regulated information',
+              children: [
+                { label: '1.1 annual financial report' },
+                { label: '1.2 half-year financial report' },
+                { label: '1.3 interim management statement' }
+              ]
+            },
+            {
+              label: '2. Ongoing regulated information\'',
+              children: [
+                { label: '2.1 home member state' },
+                { label: '2.2 inside information' }
+              ]
+            }
+          ]
+        }
+      ],
+      years: [
+        { label: '2017' },
+        { label: '2016' },
+        { label: '2015' },
+        { label: '2014' },
+        { label: '2013' }
+      ],
+      documents: []
     }
   },
   meta () {
@@ -175,6 +307,11 @@ export default {
   methods: {
     // in reality these removes would be a mixin at least
     // and they would be unit tested
+    createTable: (documents) => {
+      this.tableData = {
+
+      }
+    },
     headsUp (msg) {
       this.$q.notify(msg)
     },
@@ -231,6 +368,30 @@ export default {
           // this.companiesHolder = { ...{ label: company.name } }
           this.countriesChoice.push(company.country)
           // this.selectedCountry(`["label": "${company.country}", "value": "${company.country}" }]`)
+          if (company.name === 'G. & C. S.R.L.') {
+            this.company = company.name
+            this.identifier = company.id
+            this.documents = []
+            // this.years = []
+            company.documents.forEach((document) => {
+              this.documents.push({
+                issuerName: company.name,
+                hms: company.country,
+                class: document.type,
+                language: 'English',
+                year: document.year,
+                disclosureDate: document.disclosureDate
+              })
+              /*
+              const yearTest = this.years.indexOf({ label: document.year })
+              if (yearTest < 0) {
+                this.years.forEach((year) => {
+                  this.years.push({ label: year })
+                })
+              }
+              */
+            })
+          }
         }
       })
       this.$q.notify(`Selected Issuer "${item.label}"`)

@@ -1,5 +1,5 @@
 <template lang="pug">
-  q-layout(view="lHh Lpr lFf")
+  q-layout(view="lHh Lpr lFf", reveal)
     q-layout-header
       q-toolbar.row.header-gradient()
         q-toolbar-title.col
@@ -16,6 +16,7 @@
               q-item-main
                 q-item-tile(label) {{ language.name }}
               q-item-side(v-if="language.code === currentLanguage.code", right, icon="done", color="primary")
+        q-btn(@click="rightDrawerOpen = !rightDrawerOpen") PDF
     q-layout-drawer(
     :width="250"
     side="right"

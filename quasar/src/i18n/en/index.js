@@ -1,11 +1,71 @@
 export default {
+  table: {
+    issuerName: 'Issuer Name [Identifier]',
+    language: 'Language',
+    documentClass: 'Document Class',
+    year: 'Year',
+    disclosureDate: 'Document Disclosure Date'
+  },
   interface: {
     save: 'Save',
     favourite: 'Favourite',
     report: 'Report',
     online: 'Online',
     offline: 'Offline',
-    allRecords: 'Full Report',
+    allRecords: 'Download selected documents',
+    actions: 'ACTIONS',
+    financialYear: {
+      meta: {
+        label: 'Financial Year'
+      },
+      input: {
+        name: {
+          label: 'Filter records for identifier',
+          hint: 'Type for autocompleted results',
+          error: 'Something went wrong.',
+          empty: 'No Results'
+        }
+      }
+    },
+    selectDocs: {
+      meta: {
+        label: 'Document Classes and Subclasses'
+      },
+      input: {
+        name: {
+          label: 'Filter records for identifier',
+          hint: 'Type for autocompleted results',
+          error: 'Something went wrong.',
+          empty: 'No Results'
+        }
+      }
+    },
+    legalEntity: {
+      meta: {
+        label: 'Legal Entity Identifier'
+      },
+      input: {
+        name: {
+          label: 'Filter records for identifier',
+          hint: 'Type for autocompleted results',
+          error: 'Something went wrong.',
+          empty: 'No Results'
+        }
+      }
+    },
+    searchTitle: {
+      meta: {
+        label: 'Search title by keywords'
+      },
+      input: {
+        name: {
+          label: 'Keywords',
+          hint: 'Type for autocompleted results',
+          error: 'Something went wrong.',
+          empty: 'No Results'
+        }
+      }
+    },
     issuer: {
       meta: {
         label: 'Issuer Name'

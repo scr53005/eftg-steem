@@ -1,27 +1,126 @@
 [
   {
-    "id": "40004020121",
-    "name": "Prima Industrie",
+    "id": "8156000F049F8A6EAF34",
+    "name": "G. & C. S.R.L.",
     "country": "Italy",
     "people": "Pato Saldus",
-    "documents": {
-      "annual financial report": [
-        "2018-03-01",
-        "2017-03-01",
-        "2016-03-01"
-      ]
-    }
+    "documents": [
+      {
+        "type": "1.1 annual financial report",
+        "year": "2017",
+        "disclosureDate": "2018-03-18"
+      },
+      {
+        "type": "1.1 annual financial report",
+        "year": "2016",
+        "disclosureDate": "2017-02-17"
+      },
+      {
+        "type": "1.1 annual financial report",
+        "year": "2015",
+        "disclosureDate": "2016-04-28"
+      },
+      {
+        "type": "1.1 annual financial report",
+        "year": "2014",
+        "disclosureDate": "2015-02-20"
+      },
+      {
+        "type": "1.1 annual financial report",
+        "year": "2013",
+        "disclosureDate": "2014-03-14"
+      },
+      {
+        "type": "1.1 annual financial report",
+        "year": "2017",
+        "disclosureDate": "2018-03-18"
+      },
+      {
+        "type": "2.1 home member state",
+        "year": "2016",
+        "disclosureDate": "2017-02-17"
+      },
+      {
+        "type": "2.1 home member state",
+        "year": "2015",
+        "disclosureDate": "2016-04-28"
+      },
+      {
+        "type": "2.1 home member state",
+        "year": "2014",
+        "disclosureDate": "2015-02-20"
+      },
+      {
+        "type": "2.1 home member state",
+        "year": "2013",
+        "disclosureDate": "2014-03-14"
+      }
+    ]
   },
   {
-    "id": "40004020122",
-    "name": "Iren S.p.A.",
+    "id": "52990083O4UZWRMGA114",
+    "name": "Finlex Sabiedrība Ar Ierobežotu Atbildību",
     "country": "Latvia",
-    "people": "Pato Saldus",
-    "documents": {
-      "annual financial report": [
-        "2018-03-01",
-        "2017-03-01"
-      ]
-    }
+    "people": "James Driver",
+    "documents": [
+      {
+        "type": "1.1 annual financial report",
+        "year": "2017",
+        "disclosureDate": "2018-08-12"
+      },
+      {
+        "type": "1.1 annual financial report",
+        "year": "2016",
+        "disclosureDate": "2017-04-17"
+      },
+      {
+        "type": "1.1 annual financial report",
+        "year": "2015",
+        "disclosureDate": "2016-04-18"
+      },
+      {
+        "type": "1.1 annual financial report",
+        "year": "2014",
+        "disclosureDate": "2015-05-07"
+      },
+      {
+        "type": "1.1 annual financial report",
+        "year": "2013",
+        "disclosureDate": "2014-03-01"
+      }
+    ]
+  },
+  {
+    "id": "549300PGFEJUOIWP2337",
+    "name": "Momentum Managed Funds SICAV-SIF",
+    "country": "Luxembourg",
+    "people": "Sten Smoth",
+    "documents": [
+      {
+        "type": "1.1 annual financial report",
+        "year": "2017",
+        "disclosureDate": "2018-11-11"
+      },
+      {
+        "type": "1.1 annual financial report",
+        "year": "2016",
+        "disclosureDate": "2017-10-22"
+      },
+      {
+        "type": "1.1 annual financial report",
+        "year": "2015",
+        "disclosureDate": "2016-11-01"
+      },
+      {
+        "type": "1.1 annual financial report",
+        "year": "2014",
+        "disclosureDate": "2015-11-17"
+      },
+      {
+        "type": "1.1 annual financial report",
+        "year": "2013",
+        "disclosureDate": "2014-11-27"
+      }
+    ]
   }
 ]
