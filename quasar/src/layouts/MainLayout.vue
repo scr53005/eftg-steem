@@ -27,7 +27,16 @@
       style="height:100%"
       :thumb-style="{right:'2px',width:'4px'}"
       )
-        q-item PDF PREVIEW
+        q-no-ssr.bg-grey-1
+          q-btn(@click="$refs.myPdfComponent.print()") print
+          pdf(
+          ref="myPdfComponent"
+          :src="src"
+          v-for="i in numPages"
+          :key="i"
+          :page="i"
+          style="padding:3px"
+          )
     q-page-container.bg-background
       router-view
 </template>
@@ -35,21 +44,39 @@
 </style>
 <script>
 import { mixin as i18nMixin } from '@/plugins/i18n'
+import pdf from 'vue-pdf'
+let loadingTask
 
 export default {
   name: 'MainLayout',
   mixins: [i18nMixin],
+  components: {
+    pdf: pdf
+  },
   data () {
     return {
       rightDrawerOpen: false,
       uplink: false,
-      hover: false
+      hover: false,
+      src: undefined,
+      numPages: undefined
     }
   },
   methods: {
     getLinkStatus () {
       return this.uplink ? 'positive' : 'negative'
     }
+  },
+  mounted () {
+    if (typeof window !== 'undefined') {
+      loadingTask = pdf.createLoadingTask('statics/pdf/tkb_2017_12_menesu_parskats_eng_revidets.pdf')
+    } else {
+      loadingTask = ''
+    }
+    this.src = loadingTask
+    this.src.then(pdf => {
+      this.numPages = pdf.numPages
+    })
   }
 }
 </script>

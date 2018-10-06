@@ -7,7 +7,8 @@ module.exports = function (ctx) {
     // app plugins (/src/plugins)
     plugins: [
       'i18n',
-      'fuse'
+      'fuse',
+      { path: 'pdf', server: false}
     ],
     css: [
       'app.styl'
@@ -24,7 +25,10 @@ module.exports = function (ctx) {
       gzip: true,
       analyze: true,
       // extractCSS: false,
+      //         chain.entry('output')
+      //           .add({  })
       chainWebpack (chain) {
+        chain.output.set('globalObject', 'self')
         chain.module.rule('lint')
           .test(/\.(js|vue)$/)
           .use('eslint')
@@ -87,7 +91,8 @@ module.exports = function (ctx) {
         'QTd',
         'QTableColumns',
         'QTree',
-        'QCheckbox'
+        'QCheckbox',
+        'QNoSsr'
       ],
       directives: [
         'Ripple',

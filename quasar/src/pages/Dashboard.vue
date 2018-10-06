@@ -228,6 +228,7 @@ function fuzzysearch (needle, haystack) {
 
 export default {
   name: 'PageDashboard',
+
   data () {
     return {
       issuer: '',
@@ -240,6 +241,7 @@ export default {
       countriesHolder: undefined,
       countriesChoice: [],
       companies,
+      identifier: undefined,
       companiesChoice: [],
       country_search: undefined,
       selection: [],
