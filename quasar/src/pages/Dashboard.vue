@@ -1,11 +1,19 @@
 <template lang="pug">
   q-page
     .column
+      .flex.flex-center(v-if="!identifier")
+        .column.flex-center
+          transition(
+          appear
+          enter-active-class="animated bounceInDown"
+          leave-active-class="animated bounceInUp"
+          )
+            h2() European Financial Transparency Gateway
       .row
         q-card.col-md-5.outline()
           q-card-title.bg-primary.flex()
             strong {{ $t('interface.issuer.meta.label') }}
-            span(v-if="selectedName")
+            span(v-if="identifier")
               q-chip.float-right(square) {{ selectedName }}
           q-card-main
             q-search.full-width(
@@ -21,14 +29,15 @@
               @selected="selectedPerson"
               )
             q-chip(v-for="company in companiesChoice" :key="company.id"
-            color="secondary"
-            style="margin-right:2px"
+            color="warning"
+            text-color="black"
+            style="margin:0 2px -5px 0"
             closable
             square
             dense
             @hide="removeCompanyChip(company)"
             ) {{ company }}
-        q-card.col-md-4.outline()
+        q-card.col-md-3.outline()
           q-card-title.bg-primary()
             strong {{ $t('interface.country.meta.label') }}
           q-card-main
@@ -47,78 +56,46 @@
               )
             q-chip(v-for="country in countriesChoice" :key="country.id"
             color="secondary"
-            style="margin-right:2px"
+            text-color="black"
+            style="margin:0 2px -5px 0"
             closable
             square
             dense
             @hide="removeCountryChip(country)"
             ) {{ country }}
-        q-card.col-md-3.outline()
-          q-card-title.bg-primary()
-            strong {{ $t('interface.disclosureDate.meta.label') }}
-          q-card-main()
-            q-datetime.full-width(
-              minimal
-              type="date"
-              default-view="year"
-              format="DD/MM/YYYY"
-              min="1970"
-              max="2018"
-              :before="[{icon: 'fas fa-calendar-alt'}]"
-              :float-label="$t('interface.disclosureDate.dateFrom.label')"
-              :placeholder="$t('interface.disclosureDate.dateFrom.hint')"
-              v-model="dateFrom"
-              )
-            q-datetime.full-width(
-              minimal
-              type="date"
-              default-view="year"
-              format="DD/MM/YYYY"
-              min="1970"
-              max="2018"
-              :before="[{icon: 'fas fa-calendar-alt'}]"
-              :float-label="$t('interface.disclosureDate.dateTo.label')"
-              :placeholder="$t('interface.disclosureDate.dateTo.hint')"
-              v-model="dateTo"
-              )
-      .row(v-if="identifier")
-        .col-md-5
-          q-card.outline
-            q-card-title.bg-primary.flex()
-              strong {{ $t('interface.legalEntity.meta.label') }}
-              span(v-if="selectedName")
-                q-chip.float-right(square) {{ company }}
-            q-card-main
-              q-chip.q-ma-md(
-              color="secondary"
+        q-card.col-md-4.outline()
+          q-card-title.bg-primary.flex()
+            strong {{ $t('interface.legalEntity.meta.label') }}
+          q-card-main
+            span(v-if="identifier")
+              q-chip.q-ma-sm(
+              square
+              color="warning"
+              text-color="black"
+              ) {{ company }}
+              q-chip.q-ma-sm(
+              v-if="identifier"
+              color="warning"
+              text-color="black"
               square
               ) {{ identifier }}
-          q-card.outline()
-            q-card-title.bg-primary.flex()
-              strong {{ $t('interface.searchTitle.meta.label') }}
-
-            q-card-main
-              q-search.full-width(
-              loading
-              clearable
-              v-model="selectedName"
-              :float-label="$t('interface.searchTitle.input.name.label')"
-              :placeholder="$t('interface.searchTitle.input.name.hint')"
-              )
+            q-field(v-else) {{  $t('interface.intro') }}
+      .row(v-if="filters")
         .col-md-5
           q-card.outline()
-            q-card-title.bg-primary.flex()
-              strong {{ $t('interface.selectDocs.meta.label') }}
+            q-card-title.bg-info.flex()
+              strong {{  }}
+              q-input.full-width(
+              color="secondary"
+              :placeholder="$t('interface.selectDocs.meta.label')"
+              v-model="tickFilter"
+              class="q-ma-none"
+              clearable
+              hide-underline
+              )
             q-card-main
               .row
-                q-input.full-width(
-                color="secondary"
-                stack-label="Filter"
-                v-model="tickFilter"
-                class="q-ma-none"
-                clearable
-                )
-              q-scroll-area(style="width: 100%; height: 146px")
+              q-scroll-area(style="width: 100%; height: 128px")
                 q-tree(
                 style="font-size: 0.8em"
                 :nodes="tickable"
@@ -129,12 +106,12 @@
                 :filter="tickFilter"
                 node-key="label"
                 )
-        .col-md-2
+        .col-md-3
           q-card.outline()
-            q-card-title.bg-primary.flex()
+            q-card-title.bg-info.flex()
               strong {{ $t('interface.financialYear.meta.label') }}
             q-card-main
-              q-scroll-area(style="width: 100%; height: 202px")
+              q-scroll-area(style="width: 100%; height: 180px")
                 q-tree(
                 style="font-size: 0.8em"
                 :nodes="years"
@@ -144,28 +121,60 @@
                 tick-strategy="leaf"
                 node-key="label"
                 )
+        .col-md-4
+          q-card.outline()
+            q-card-title.bg-info()
+              strong {{ $t('interface.disclosureDate.meta.label') }}
+            q-card-main()
+              .row
+                q-datetime.col(
+                minimal
+                type="date"
+                default-view="year"
+                format="DD/MM/YYYY"
+                min="1970"
+                max="2018"
+                :before="[{icon: 'fas fa-calendar-alt'}]"
+                :float-label="$t('interface.disclosureDate.dateFrom.label')"
+                :placeholder="$t('interface.disclosureDate.dateFrom.hint')"
+                v-model="dateFrom"
+                )
+                q-datetime.col(
+                minimal
+                type="date"
+                default-view="year"
+                format="DD/MM/YYYY"
+                min="1970"
+                max="2018"
+                :before="[{icon: 'fas fa-calendar-alt'}]"
+                :float-label="$t('interface.disclosureDate.dateTo.label')"
+                :placeholder="$t('interface.disclosureDate.dateTo.hint')"
+                v-model="dateTo"
+                )
       .row(v-if="identifier")
         q-card.col-md-12.outline()
           q-table.full-width(
+          dense
           :data="documents"
           :columns="columns"
-          row-key="name"
-          selection="single"
-          :selected.sync="selected"
-          rows-per-page="[10, 25, 50, 100]"
+          row-key="uuid"
+          selection="multiple"
+          :selected.sync="selectedTable"
           )
             template(slot="top-selection" slot-scope="props")
               .row.bg-grey-10.full-width
-                .col-3
-                  q-btn.q-pa-sm(flat, dense, size="xs", text-color="cyan-2" icon="fas fa-cloud-download-alt", @click="headsUp(`Downloading all assets with edges connected to this user`)")
-                    label {{ $t('interface.allRecords') }}
                 .col-6
-                .col-3
-                  q-btn.q-pa-sm(flat, dense, size="xs", text-color="positive", icon="star", @click="headsUp(`Saving this Issuer to your favorites`)")
+                  q-btn.q-ma-sm(size="sm" dense text-color="black" color="secondary" @click="$root.$emit('openLeftDrawer')") {{ $t('interface.showPdf') }}
+                  q-btn.q-ma-sm(size="sm" dense text-color="black" color="info" @click="$root.$emit('openRightDrawer')") {{ $t('interface.filterResults') }}
+                  q-btn.q-pa-sm(flat, dense, size="xs", text-color="cyan-2" icon="fas fa-cloud-download-alt", @click="download('/statics/pdf/tkb_2017_12_menesu_parskats_eng_revidets.pdf')")
+                    label {{ $t('interface.allRecords') }}
+                .col-2
+                .col-4.float-right(style="margin-top:4px")
+                  q-btn.q-pa-sm(flat, dense, size="xs", text-color="positive", icon="star", @click="headsUp(`Saving this Document to your favorites`)")
                     label {{ $t('interface.favourite') }}
-                  q-btn.q-pa-sm(flat, dense, size="xs", text-color="warning", icon="warning", @click="headsUp(`Alert the admins about this Issuer`)")
+                  q-btn.q-pa-sm(flat, dense, size="xs", text-color="warning", icon="warning", @click="headsUp(`Alert the admins about this Document`)")
                     label {{ $t('interface.report') }}
-                  q-btn.q-pa-sm(flat, dense, size="xs", text-color="light" icon="info", @click="headsUp(`Show me what the heck this is about`)")
+                  q-btn.q-pa-sm(flat, dense, size="xs", text-color="light" icon="info", @click="headsUp(`Take me to the documentation for this page`)")
                     label {{ $t('pages.information.title') }}
                   // div.col
                   // q-btn(color="negative" flat round delete icon="delete")
@@ -174,6 +183,14 @@
 <style>
   .outline {
     border: 1px solid rgba(0,0,0,0.1);
+  }
+  .q-card {
+    background: rgba(20,20,30,0.05)
+  }
+  ::placeholder, :placeholder-shown, ::-webkit-input-placeholder, ::-moz-placeholder {
+    opacity: 1;
+    font-family: notosans_thin;
+    color: #000000!important;
   }
 </style>
 
@@ -245,8 +262,9 @@ export default {
       companiesChoice: [],
       country_search: undefined,
       selection: [],
-      selected: undefined,
+      selectedTable: [],
       deleteRow: undefined,
+      filters: false,
       columns: [
         {
           name: 'name',
@@ -260,6 +278,7 @@ export default {
           // format: val => `${val}`,
           classes: 'my-special-class'
         },
+        { name: 'uuid', align: 'center', label: 'DOC UUID', field: 'uuid', sortable: true },
         { name: 'hms', align: 'center', label: 'HMS', field: 'hms', sortable: true },
         { name: 'class', align: 'center', label: this.$t('table.documentClass'), field: 'class', sortable: true },
         { name: 'language', align: 'center', label: this.$t('table.language'), field: 'language', sortable: true },
@@ -307,11 +326,14 @@ export default {
     }
   },
   methods: {
+    download (url) {
+      window.open(url)
+    },
     // in reality these removes would be a mixin at least
     // and they would be unit tested
     createTable: (documents) => {
       this.tableData = {
-
+        // maybe later
       }
     },
     headsUp (msg) {
@@ -320,12 +342,14 @@ export default {
     removeCountryChip (item) {
       const check = this.countriesChoice.indexOf(item)
       if (check > -1) this.countriesChoice.splice(check, 1)
-      this.$q.notify(`Removed country: "${item}"`)
+      // this.$q.notify(`Removed country: "${item}"`)
     },
     removeCompanyChip (item) {
       const check = this.companiesChoice.indexOf(item)
       if (check > -1) this.companiesChoice.splice(check, 1)
       this.$q.notify(`Removed company: "${item}"`)
+      this.identifier = false
+      this.countriesChoice = []
     },
     searchFilter (terms, { field, list }) {
       const token = terms.toLowerCase()
@@ -356,7 +380,7 @@ export default {
           this.companiesChoice.push(company.name)
         } else {
           // SUPER HACKY!!!
-          this.removeCompanyChip(company.name)
+          // this.removeCompanyChip(company.name)
         }
       })
       this.$q.notify(`Selected suggestion "${item.label}"`)
@@ -370,31 +394,32 @@ export default {
           // this.companiesHolder = { ...{ label: company.name } }
           this.countriesChoice.push(company.country)
           // this.selectedCountry(`["label": "${company.country}", "value": "${company.country}" }]`)
-          if (company.name === 'G. & C. S.R.L.') {
-            this.company = company.name
-            this.identifier = company.id
-            this.documents = []
-            // this.years = []
-            company.documents.forEach((document) => {
-              this.documents.push({
-                issuerName: company.name,
-                hms: company.country,
-                class: document.type,
-                language: 'English',
-                year: document.year,
-                disclosureDate: document.disclosureDate
-              })
-              /*
-              const yearTest = this.years.indexOf({ label: document.year })
-              if (yearTest < 0) {
-                this.years.forEach((year) => {
-                  this.years.push({ label: year })
-                })
-              }
-              */
+          // if (company.name === 'G. & C. S.R.L.') {
+          this.company = company.name
+          this.identifier = company.id
+          this.documents = []
+          // this.years = []
+          company.documents.forEach((document) => {
+            this.documents.push({
+              uuid: uid().substring(0, 8),
+              issuerName: company.name,
+              hms: company.country,
+              class: document.type,
+              language: 'English',
+              year: document.year,
+              disclosureDate: document.disclosureDate
             })
-          }
+            /*
+            const yearTest = this.years.indexOf({ label: document.year })
+            if (yearTest < 0) {
+              this.years.forEach((year) => {
+                this.years.push({ label: year })
+              })
+            }
+            */
+          })
         }
+        // }
       })
       this.$q.notify(`Selected Issuer "${item.label}"`)
     },

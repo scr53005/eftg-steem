@@ -6,6 +6,15 @@ export default {
     online: 'En ligne',
     offline: 'Hors ligne',
     allRecords: 'Rapport complet',
+    intro: 'Veuillez sélectionner ou saisir un nom dans le champ Nom de l’émetteur pour afficher les résultats et interagir avec la base de données.',
+    showPdf: 'Afficher le pdf',
+    filterResults: 'Filtrer les résultats',
+    downloadPdf: 'Télécharger PDF',
+    account: 'Compte d\'utilisateur',
+    userName: 'Votre nom',
+    userNameHelper: 'Nous avons besoin de votre nom pour être plus transparent.',
+    password: 'Mot de passe',
+    passwordHelper: 'Utilisez un mot de passe pour protéger votre nom.',
     financialYear: {
       meta: {
         label: 'Année financière'
@@ -21,7 +30,7 @@ export default {
     },
     selectDocs: {
       meta: {
-        label: 'Classes et sous-classes de document'
+        label: 'Classes de document'
       },
       input: {
         name: {
@@ -73,7 +82,7 @@ export default {
     },
     country: {
       meta: {
-        label: 'État membre d\'origine de l\'émetteur'
+        label: 'État d\'origine de l\'émetteur'
       },
       input: {
         name: {

@@ -1,6 +1,8 @@
 // Configuration for your app
 
 const path = require('path')
+/* uncomment next line and chain command below to rebuild icons */
+// const IconFactory = require('icon-factory')
 
 module.exports = function (ctx) {
   return {
@@ -8,7 +10,8 @@ module.exports = function (ctx) {
     plugins: [
       'i18n',
       'fuse',
-      { path: 'pdf', server: false}
+      'pdf'
+//      { path: 'pdf', server: false}
     ],
     css: [
       'app.styl'
@@ -24,11 +27,31 @@ module.exports = function (ctx) {
       vueCompiler: true,
       gzip: true,
       analyze: true,
-      // extractCSS: false,
-      //         chain.entry('output')
-      //           .add({  })
+      /*
+      extendWebpack (cfg) {
+        cfg.output = {
+          ...cfg.output,
+          globalObject: 'this'
+        }
+      },
+      */
       chainWebpack (chain) {
-        chain.output.set('globalObject', 'self')
+        chain.output.set('globalObject', 'this')
+        /* use when publishing */
+        /*
+        chain.plugin('icon-factory')
+          .use(IconFactory, [
+            [{
+              preset: 'electron',
+              source: './src/statics/icon-prototype_1480x1480.png',
+              target: './src/statics/icons',
+              options: false,
+              minify: 'optipng',
+              mode: undefined,
+              debug: true
+            }]
+          ])
+        */
         chain.module.rule('lint')
           .test(/\.(js|vue)$/)
           .use('eslint')
@@ -92,7 +115,9 @@ module.exports = function (ctx) {
         'QTableColumns',
         'QTree',
         'QCheckbox',
-        'QNoSsr'
+        'QNoSsr',
+        'QCollapsible',
+        'QDialog'
       ],
       directives: [
         'Ripple',
@@ -105,7 +130,7 @@ module.exports = function (ctx) {
         'Cookies'
       ]
     },
-    animations: [],
+    animations: ['bounceInDown', 'bounceInUp'],
     ssr: {
       pwa: {
         runtimeCaching: [

@@ -49,7 +49,8 @@
     "now": "^11.4.5",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
-    "quasar-cli": "^0.17.19",
+    "quasar-cli": "^0.17.20",
+    "icon-factory": "https://github.com/quasarframework/quasar-icon-factory",
     "strip-ansi": "=3.0.1",
     "vue-jest": "^2.6.0"
   },

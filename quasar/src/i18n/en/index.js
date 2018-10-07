@@ -14,6 +14,15 @@ export default {
     offline: 'Offline',
     allRecords: 'Download selected documents',
     actions: 'ACTIONS',
+    intro: 'Please select or type a name in the Issuer Name field to see results and interact with the database.',
+    showPdf: 'Show PDF',
+    filterResults: 'Filter Results',
+    downloadPdf: 'Download PDF',
+    account: 'User Account',
+    userName: 'Your name',
+    userNameHelper: 'We need your name to be more transparent.',
+    password: 'Password',
+    passwordHelper: 'Use a password to keep your name safe.',
     financialYear: {
       meta: {
         label: 'Financial Year'
@@ -29,7 +38,7 @@ export default {
     },
     selectDocs: {
       meta: {
-        label: 'Document Classes and Subclasses'
+        label: 'Document Classes'
       },
       input: {
         name: {
@@ -60,7 +69,7 @@ export default {
       input: {
         name: {
           label: 'Keywords',
-          hint: 'Type for autocompleted results',
+          hint: 'Full text search',
           error: 'Something went wrong.',
           empty: 'No Results'
         }
