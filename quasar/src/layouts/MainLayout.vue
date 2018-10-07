@@ -2,7 +2,7 @@
   q-layout(view="lHh Lpr lFf", reveal)
     q-layout-header
       q-toolbar.row.justify.header-gradient()
-        q-toolbar-title.col
+        q-toolbar-title.col.col-xs-6
           img(src="statics/EFTG_logo.png" style="padding-top: 4px")
         q-field.col
           .float-right

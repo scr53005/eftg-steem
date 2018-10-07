@@ -10,7 +10,7 @@
           )
             h2() European Financial Transparency Gateway
       .row
-        q-card.col-md-5.outline()
+        q-card.col-md-5.col-sm-12.col-xs-12.outline()
           q-card-title.bg-primary.flex()
             strong {{ $t('interface.issuer.meta.label') }}
             span(v-if="identifier")
@@ -37,7 +37,7 @@
             dense
             @hide="removeCompanyChip(company)"
             ) {{ company }}
-        q-card.col-md-3.outline()
+        q-card.col-md-3.col-sm-12.col-xs-12.outline()
           q-card-title.bg-primary()
             strong {{ $t('interface.country.meta.label') }}
           q-card-main
@@ -63,7 +63,7 @@
             dense
             @hide="removeCountryChip(country)"
             ) {{ country }}
-        q-card.col-md-4.outline()
+        q-card.col-md-4.col-sm-12.col-xs-12.outline()
           q-card-title.bg-primary.flex()
             strong {{ $t('interface.legalEntity.meta.label') }}
           q-card-main
