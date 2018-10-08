@@ -2,7 +2,7 @@
 
 const path = require('path')
 /* uncomment next line and chain command below to rebuild icons */
-// const IconFactory = require('icon-factory')
+const IconFactory = require('icon-factory')
 
 module.exports = function (ctx) {
   return {
@@ -26,7 +26,7 @@ module.exports = function (ctx) {
       vueRouterMode: 'history',
       vueCompiler: true,
       gzip: true,
-      analyze: true,
+      // analyze: true,
       /*
       extendWebpack (cfg) {
         cfg.output = {
@@ -131,6 +131,15 @@ module.exports = function (ctx) {
       ]
     },
     animations: ['bounceInDown', 'bounceInUp'],
+    electron: {
+      // optional; webpack config Object for
+      // the Main Process ONLY (/src-electron/main-process/)
+
+      bundler: 'builder',
+      builder: {
+        // ...
+      }
+    },
     ssr: {
       pwa: {
         runtimeCaching: [

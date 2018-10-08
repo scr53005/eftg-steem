@@ -233,6 +233,7 @@ export default {
       hover: false,
       src: undefined,
       numPages: undefined,
+      name: undefined,
       ticked: ['1.1 annual financial report', '2.1 home member state'],
       tickedYear: ['2017', '2016', '2015', '2014', '2013'],
       tickFilter: null,
@@ -301,7 +302,7 @@ export default {
       this.actionSheet = true
     })
     if (typeof window !== 'undefined') {
-      loadingTask = pdf.createLoadingTask('statics/pdf/tkb_2017_12_menesu_parskats_eng_revidets.pdf')
+      loadingTask = pdf.createLoadingTask('/statics/pdf/tkb_2017_12_menesu_parskats_eng_revidets.pdf')
     } else {
       loadingTask = ''
     }
