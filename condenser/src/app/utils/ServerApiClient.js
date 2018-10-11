@@ -13,7 +13,12 @@ const request_base = {
 export function serverApiLogin(account, signatures) {
     if (!process.env.BROWSER || window.$STM_ServerBusy) return;
     const request = Object.assign({}, request_base, {
-        body: JSON.stringify({ account, signatures, csrf: $STM_csrf }),
+        body: JSON.stringify({
+            jsonrpc: '2.0',
+            account,
+            signatures,
+            csrf: $STM_csrf,
+        }),
     });
     return fetch('/api/v1/login_account', request);
 }
@@ -21,7 +26,7 @@ export function serverApiLogin(account, signatures) {
 export function serverApiLogout() {
     if (!process.env.BROWSER || window.$STM_ServerBusy) return;
     const request = Object.assign({}, request_base, {
-        body: JSON.stringify({ csrf: $STM_csrf }),
+        body: JSON.stringify({ jsonrpc: '2.0', csrf: $STM_csrf }),
     });
     fetch('/api/v1/logout_account', request);
 }
@@ -63,7 +68,7 @@ export function recordPageView(page, referer, account) {
 
 export function saveCords(x, y) {
     const request = Object.assign({}, request_base, {
-        body: JSON.stringify({ csrf: $STM_csrf, x: x, y: y }),
+        body: JSON.stringify({ jsonrpc: '2.0', csrf: $STM_csrf, x: x, y: y }),
     });
     fetch('/api/v1/save_cords', request);
 }
@@ -72,21 +77,25 @@ export function setUserPreferences(payload) {
     if (!process.env.BROWSER || window.$STM_ServerBusy)
         return Promise.resolve();
     const request = Object.assign({}, request_base, {
-        body: JSON.stringify({ csrf: window.$STM_csrf, payload }),
+        body: JSON.stringify({
+            jsonrpc: '2.0',
+            csrf: window.$STM_csrf,
+            payload,
+        }),
     });
     return fetch('/api/v1/setUserPreferences', request);
 }
 
 export function isTosAccepted() {
     const request = Object.assign({}, request_base, {
-        body: JSON.stringify({ csrf: window.$STM_csrf }),
+        body: JSON.stringify({ jsonrpc: '2.0', csrf: window.$STM_csrf }),
     });
     return fetch('/api/v1/isTosAccepted', request).then(res => res.json());
 }
 
 export function acceptTos() {
     const request = Object.assign({}, request_base, {
-        body: JSON.stringify({ csrf: window.$STM_csrf }),
+        body: JSON.stringify({ jsonrpc: '2.0', csrf: window.$STM_csrf }),
     });
     return fetch('/api/v1/acceptTos', request);
 }
