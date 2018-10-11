@@ -33,28 +33,27 @@ RUN \
         jq \
         wget \
         gdb \
-		libboost-chrono-dev \
-		libboost-context-dev \
-		libboost-coroutine-dev \
-		libboost-date-time-dev \
-		libboost-filesystem-dev \
-		libboost-iostreams-dev \
-		libboost-locale-dev \
-		libboost-program-options-dev \
-		libboost-serialization-dev \
-		libboost-signals-dev \
-		libboost-system-dev \
-		libboost-test-dev \
-		libboost-thread-dev \
-		g++ \
-		git \
-		libbz2-dev \
-		libsnappy-dev \
-		make \
+	libboost-chrono-dev \
+	libboost-context-dev \
+	libboost-coroutine-dev \
+	libboost-date-time-dev \
+	libboost-filesystem-dev \
+	libboost-iostreams-dev \
+	libboost-locale-dev \
+	libboost-program-options-dev \
+	libboost-serialization-dev \
+	libboost-signals-dev \
+	libboost-system-dev \
+	libboost-test-dev \
+	libboost-thread-dev \
+	g++ \
+	git \
+	libbz2-dev \
+	libsnappy-dev \
+	make \
     && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    pip3 install gcovr
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 ADD . /usr/local/src/steem
 
