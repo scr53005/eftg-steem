@@ -1,8 +1,8 @@
 Using the public EFTG Docker image
 ==================================
  # Recommended requirments 
- # Witness VM : 2 x vCPU, 8 GB RAM, 128 Gb SDD, Linux Ubuntu 18.04 LTS, Docker Installed, a dedicated user account (NOT root)
- # FullRPCnode VM: 2x vCPU, 16 GB RAM, 256 GB SDD, Linux Ubuntu 18.04 LTS, Docker Installed, a dedicated user account (NOT root) 
+  Witness VM : 2 x vCPU, 8 GB RAM, 128 Gb SDD, Linux Ubuntu 18.04 LTS, Docker Installed, a dedicated user account (NOT root)
+  FullRPCnode VM: 2x vCPU, 16 GB RAM, 256 GB SDD, Linux Ubuntu 18.04 LTS, Docker Installed, a dedicated user account (NOT root) 
  
  # Pull latest docker image from EFTG's public repository
   docker pull blkcc/eftg:latest
