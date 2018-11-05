@@ -5,7 +5,7 @@ Using the public EFTG Docker image
   
   For FullRPCnode VM: 2x vCPU, 16 GB RAM, 256 GB SDD, Linux Ubuntu 18.04 LTS, Docker Installed, a dedicated user account (NOT root) 
  
- # Pull latest docker image from EFTG's public repository
+ ## Pull latest docker image from EFTG's public repository
   docker pull blkcc/eftg:latest
  ### If the machine does not have access to the internet we can provide access to a private repository
 
@@ -17,13 +17,13 @@ Using the public EFTG Docker image
 
  ## Copy the configuration for the type of node you'll like to use into the directory we just created
  cp ~/eftg-steem/config/witness/config.ini ~/eftg/ # (for a seed+witness node - intermediate option for OAMs)
- ## or
+ ### or
  cp ~/eftg-steem/config/full-node/config.ini ~/eftg/ # (for a seed+full RPC node - advanced option for OAMs)
- ## or
+ ### or
  cp ~/eftg-steem/config/seed/config.ini ~/eftg/ # (only for a seed node - not available as a separate option in EFTG)
  
  ## Edit the configuration and change the lines that contain the [replace] comment
- ## In the case of a witness node you will replace the "seed-node" lines first, in order to connect to the network and to get the private key. 
+ ### In the case of a witness node you will replace the "seed-node" lines first, in order to connect to the network and to get the private key. 
  
 vim ~/eftg/config.ini
 
