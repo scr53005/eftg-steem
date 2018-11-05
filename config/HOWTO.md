@@ -29,9 +29,9 @@ vim ~/eftg/config.ini
 
 
 
- ## Alternatively, we can provide a config.ini with the seed nodes, the witness username and private key
+ ### Alternatively, we can provide a config.ini with the seed nodes, the witness username and private key
 
- ## Finally, let's run the container !
+ ### Finally, let's run the container !
  docker run -p 2001:2001 -p 8090:8090 -v ~/eftg:/eftg -d --name witness -t blkcc/eftg:latest /usr/local/eftgd-default/bin/steemd -d /eftg
 
 Compiling from Source
