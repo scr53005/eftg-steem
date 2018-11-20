@@ -1,0 +1,74 @@
+{
+  "Issuer_Name": "Auchan",
+  "HMS": "SP",
+  "Identifier": [
+    {
+      "id": 0,
+      "name": "LEI",
+      "type": "Unique",
+      "value": "8156009F1ECE07075082"
+    },
+    {
+      "id": 1,
+      "name": "VAT",
+      "type": "Unique",
+      "value": "RO123456"
+    },
+    {
+      "id": 2,
+      "name": "RegistrationNumber",
+      "type": "Other",
+      "value": "J40/323/2016"
+    }
+  ],
+  "Class": [
+    {
+      "id": 0,
+      "name": "Periodic Regulated Information",
+      "Subclass": [
+        {
+          "id": 0,
+          "name": "Annual Financial Report"
+        },
+        {
+          "id": 1,
+          "name": "Half-Year Financial Report"
+        },
+        {
+          "id": 2,
+          "name": "Interim Management Statement"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Ongoing Regulated Information",
+      "Subclass": [
+        {
+          "id": 0,
+          "name": "Home Member State"
+        },
+        {
+          "id": 1,
+          "name": "Inside Information"
+        }
+      ]
+    }
+  ],
+  "Disclosure_Date": 20180903,
+  "Document_Language": [
+    {
+      "lang_iso": "SP",
+      "lang": "Spanish"
+    }
+  ],
+  "Comment": "This is the title field in the form",
+  "Financial_Year": 2017,
+  "tags": [
+    "Annual Financial Report",
+    "Auchan",
+    "SP",
+    "Identifier.name"
+  ],
+  "Submission_Date": 20180904
+}
