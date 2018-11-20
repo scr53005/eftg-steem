@@ -1,7 +1,7 @@
 {
   "Issuer_Name": "Auchan",
   "HMS": "SP",
-  "Identifier": [
+  "Identifier": [ # // here are all the valid options , only one will be present in the JSON file 
     {
       "id": 0,
       "name": "LEI",
@@ -21,11 +21,12 @@
       "value": "J40/323/2016"
     }
   ],
-  "Class": [
+  "Class": [ # // here are all the valid options , only one will be present in the JSON file 
+
     {
       "id": 0,
       "name": "Periodic Regulated Information",
-      "Subclass": [
+      "Subclass": [ # // here are all the valid options , only one will be present in the JSON file
         {
           "id": 0,
           "name": "Annual Financial Report"
