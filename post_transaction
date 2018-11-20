@@ -1,0 +1,9 @@
+stm.post(
+    "SP + Auchan + timestamp of the submision ", // concatenate the mandatory fields ( HMS + Issuer Name  + timestampe) # title
+    "http://location/folder/hash.filetype", // link for the file (pdf, xbrl, xls(x) or xml) # body
+    author="OAM-Spain",
+    permlink="SP + Auchan + timestamp of the submision", // concatenate the mandatory fields ( HMS + Issuer Name  + timestampe) must be unique ! #permlink
+    app="EFTG/0.0.1",
+    tags=["Annual Financial Report", "Auchan", "SP", "8156009F1ECE07075082", "2017"], //if the year is present it will be included in the tags, if not, it will not be included in the tags.
+    json_metadata='{"Issuer_Name":"Auchan","HMS":"SP","Identifier":[{"id":0,"name":"LEI","type":"Unique","value":"8156009F1ECE07075082"}],"Class":[{"id":0,"name":"Periodic Regulated Information","Subclass":[{"id":0,"name":"Annual Financial Report"}]}],"Disclosure_Date":20180903,"Document_Language":[{"lang_iso":"SP","lang":"Spanish"}],"Comment":"This is the title field in the form","Financial_Year":2017,"tags":["Annual Financial Report","Auchan","SP","Identifier.name"],"Submission_Date":20180904}'
+)
