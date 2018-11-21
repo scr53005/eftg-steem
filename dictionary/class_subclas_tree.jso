@@ -1,0 +1,39 @@
+[
+ {
+      "id": 1,
+      "name": "Periodic Regulated Information"
+      “subclass”:[
+        {
+		
+          "id": 3,
+          "name": "Annual Financial Report"
+        },
+        {
+          "id": 4,
+          "name": "Half-Year Financial Report"
+        },
+        {
+          "id": 5,
+          "name": "Interim Management Statement"
+        }
+		
+      ]
+  },
+    
+	{
+      "id": 2,
+      "name": "Ongoing Regulated Information"
+      “subclass”:[
+        {
+		
+          "id": 6,
+          "name": "Home Member State"
+        },
+        {
+          "id": 7,
+          "name": "Inside Information"
+        },
+        
+      ]
+  }
+  ]
