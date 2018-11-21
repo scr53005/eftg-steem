@@ -1,3 +1,4 @@
+// TO BE IMPROVED 
 stm.post(
     "SP + Auchan + timestamp of the submision ", // concatenate the mandatory fields ( HMS + Issuer Name  + timestampe) # title
     "http://location/folder/hash.filetype", // link for the file (pdf, xbrl, xls(x) or xml) # body
