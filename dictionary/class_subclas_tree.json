@@ -2,7 +2,7 @@
  {
       "id": 1,
       "name": "Periodic Regulated Information"
-      “subclass”:[
+      "subclass":[
         {
 		
           "id": 3,
@@ -23,7 +23,7 @@
 	{
       "id": 2,
       "name": "Ongoing Regulated Information"
-      “subclass”:[
+      "subclass":[
         {
 		
           "id": 6,
