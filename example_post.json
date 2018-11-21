@@ -1,7 +1,7 @@
 {
-  "Issuer_Name": "Auchan",
-  "HMS": "SP",
-  "Identifier": [
+  "issuer_name": "Auchan",
+  "country": "SP",
+  "identifier": [
     {
       "id": 0,
       "name": "LEI",
@@ -9,11 +9,11 @@
       "value": "8156009F1ECE07075082"
     }
   ],
-  "Class": [
+  "class": [
     {
       "id": 0,
       "name": "Periodic Regulated Information",
-      "Subclass": [
+      "subclass": [
         {
           "id": 0,
           "name": "Annual Financial Report"
@@ -21,20 +21,20 @@
       ]
     }
   ],
-  "Disclosure_Date": 20180903,
-  "Document_Language": [
+  "disclosure_date": 03/09/2018,
+  "document_language": [
     {
       "lang_iso": "SP",
       "lang": "Spanish"
     }
   ],
-  "Comment": "This is the title field in the form",
-  "Financial_Year": 2017,
+  "comment": "This is the title field in the form",
+  "financial_year": 2017,
   "tags": [
     "Annual Financial Report",
     "Auchan",
     "SP",
-    "Identifier.name"
+    "LEI"
   ],
-  "Submission_Date": 20180904
+  "submission_date": "2018-11-21T11:19:45"
 }
