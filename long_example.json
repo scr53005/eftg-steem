@@ -1,77 +1,22 @@
-// TO BE IMPROVED
-
 {
-  "Issuer_Name": "Auchan",
-  "HMS": "SP",
-  "Identifier": [ # // here are all the valid options , only one will be present in the JSON file 
+  "issuer_name": "Auchan",
+  "home_member_state": "SP",
+  "identifier":
     {
-      "id": 0,
-      "name": "LEI",
-      "type": "Unique",
+      "id": 1,
       "value": "8156009F1ECE07075082"
     },
-    {
-      "id": 1,
-      "name": "VAT",
-      "type": "Unique",
-      "value": "RO123456"
-    },
-    {
-      "id": 2,
-      "name": "RegistrationNumber",
-      "type": "Other",
-      "value": "J40/323/2016"
-    }
-  ],
-  "Class": [ # // here are all the valid options , only one will be present in the JSON file 
-
-    {
-      "id": 0,
-      "name": "Periodic Regulated Information",
-      "Subclass": [ # // here are all the valid options , only one will be present in the JSON file
-        {
-          "id": 0,
-          "name": "Annual Financial Report"
-        },
-        {
-          "id": 1,
-          "name": "Half-Year Financial Report"
-        },
-        {
-          "id": 2,
-          "name": "Interim Management Statement"
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "name": "Ongoing Regulated Information",
-      "Subclass": [
-        {
-          "id": 0,
-          "name": "Home Member State"
-        },
-        {
-          "id": 1,
-          "name": "Inside Information"
-        }
-      ]
-    }
-  ],
-  "Disclosure_Date": 20180903,
-  "Document_Language": [
-    {
-      "lang_iso": "SP",
-      "lang": "Spanish"
-    }
-  ],
+  "subclass": 3,
+  "disclosure_date": "2008-09-15T00:00:00",
+  "document_language": "sp",
   "Comment": "This is the title field in the form",
   "Financial_Year": 2017,
   "tags": [
     "Annual Financial Report",
     "Auchan",
     "SP",
-    "Identifier.name"
+    "8156009F1ECE07075082"
   ],
-  "Submission_Date": 20180904
+  "submission_date": "2008-09-15T00:00:00",
 }
+
