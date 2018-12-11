@@ -8,7 +8,7 @@
 	"from": 1,
 	"to": 15,
 	"data": [{
-		issuer_name": "Auchan",
+		"issuer_name": "Auchan",
         "home_member_state": "SP",
         "identifier_id": 1,
         "identifier_name": "LEI"
