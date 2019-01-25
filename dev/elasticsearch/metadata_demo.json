@@ -1,0 +1,26 @@
+{
+  "issuer_name": "BNP PARIBAS",
+  "home_member_state": "BE",
+  "identifier_id": 2,
+  "identifier_value": "BE1212121",
+  "subclass": 3,
+  "disclosure_date": "2018-12-12T00:00:00",
+  "document_language": "en",
+  "comment": "annual financial report",
+  "financial_year": "2017",
+  "tags": [
+    "annual-financreport",
+    "BNP PARIBAS",
+    "BE",
+    "BE1212121"
+  ],
+  "submission_date": "2019-01-10T14:39:36",
+  "app": "pulsar/0.0.1",
+  "link": "[[pdf link]](https://cdn.blkcc.xyz/DQma8LGBDzAtDD2Kc5oQjop7HwXFcp4oXjiaAPQYhyrnhvm/sample.pdf)",
+  "head_block_number": "3058320",
+  "transaction_ids": [
+    "e8152f03ada3affcdc328c17d3c0e72c5935fcca",
+    "f9510eee3281715bced87156f29f5665b5a164eb",
+    "04d99166bb9e696165aa36e76d6ed5521f5c5f1a"
+  ]
+}
